@@ -5,9 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Warunkowe umorzenie - jazda po alkoholu | ObronaKierowcy.pl</title>
 <meta name="description" content="Warunkowe umorzenie oznacza brak skazania i brak wpisu do rejestru karnego. Warunki z art. 66 k.k., okres próby, wniosek i jego załączniki.">
-<!-- Podgląd pod adresem tymczasowym. Bez canonical i z noindex na każdej
-     podstronie: zaindeksowany podgląd konkurowałby z docelową domeną
-     o te same frazy. Powód w komentarzu przy TRYB_PODGLAD w inc/config.php. -->
 <meta name="robots" content="noindex, nofollow">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Warunkowe umorzenie - jazda po alkoholu">
@@ -636,19 +633,107 @@
 
         <section>
         
-            <!-- Podgląd statyczny: nie ma PHP, więc nie ma czego wysłać.
-                 Zostawiamy w tym miejscu telefon zamiast formularza, który
-                 przyjmie opis sprawy i po cichu go zgubi. -->
-            <div class="alert" role="status">
-                <h3>To jest podgląd serwisu</h3>
-                <section>
-                    Formularz działa dopiero na docelowym serwerze. Na razie jest tu
-                    po to, żeby było widać, jak wygląda i o co pyta.
-                    W sprawie samego serwisu dzwoń pod
-                    <a href="tel:+48609910823"><span class="dana">+48 609 910 823</span></a>.
-                </section>
-            </div>
+            
+                                        <div>
+            
+                <div class="sr-only" aria-hidden="true">
+                    <label for="f-www">Nie wypełniaj</label>
+                    <input id="f-www" type="text" name="www" value="" tabindex="-1" autocomplete="off">
+                </div>
 
+                <fieldset class="fieldset">
+                    <div role="group" aria-label="Dane do kontaktu i opis sprawy">
+
+                        <div class="grid gap-4 sm:grid-cols-2">
+                            <div role="group" class="field">
+                                <label for="f-imie">Imię</label>
+                                <input id="f-imie" name="imie" type="text" required maxlength="80"
+                                       autocomplete="given-name"                                       value="">
+                            </div>
+                            <div role="group" class="field">
+                                <label for="f-telefon">Telefon</label>
+                                <input id="f-telefon" name="telefon" type="tel" required maxlength="20"
+                                       autocomplete="tel" class="dana"                                       value="">
+                            </div>
+                        </div>
+
+                        <div class="grid gap-4 sm:grid-cols-2">
+                            <div role="group" class="field">
+                                <label for="f-email">E-mail</label>
+                                <input id="f-email" name="email" type="email" maxlength="120"
+                                       autocomplete="email" aria-describedby="f-email-opis"                                       value="">
+                                <p id="f-email-opis">Nieobowiązkowy.</p>
+                            </div>
+                            <div role="group" class="field">
+                                <label for="f-promile">Wynik badania</label>
+                                <input id="f-promile" name="promile" type="text" maxlength="40" class="dana"
+                                       placeholder="0,62 promila albo 0,31 mg/dm3" aria-describedby="f-promile-opis"
+                                       value="">
+                                <p id="f-promile-opis">Jeśli go znasz.</p>
+                            </div>
+                        </div>
+
+                        <div class="grid gap-4 sm:grid-cols-2">
+                            <div role="group" class="field">
+                                <label for="f-etap">Etap sprawy</label>
+                                <select id="f-etap" name="etap" class="select w-full">
+                                                                            <option value="" selected>wybierz</option>
+                                                                            <option value="zatrzymanie">Zatrzymanie, nic więcej jeszcze nie było</option>
+                                                                            <option value="policja">Wezwanie na policję lub do prokuratury</option>
+                                                                            <option value="akt-oskarzenia">Sprawa jest już w sądzie</option>
+                                                                            <option value="wyrok">Jest wyrok, myślę o apelacji</option>
+                                                                            <option value="zakaz">Trwa zakaz, pytam o blokadę alkoholową</option>
+                                                                            <option value="inne">Inne</option>
+                                                                    </select>
+                            </div>
+                            <div role="group" class="field">
+                                <label for="f-miasto">Miasto lub sąd</label>
+                                <input id="f-miasto" name="miasto" type="text" maxlength="80"
+                                       value="">
+                            </div>
+                        </div>
+
+                        <div role="group" class="field">
+                            <label for="f-opis">Co się stało</label>
+                            <textarea id="f-opis" name="opis" rows="6" required maxlength="4000"
+                                      aria-describedby="f-opis-opis"></textarea>
+                            <p id="f-opis-opis">Data, godzina, wynik alkomatu, czy było wezwanie. Kilka zdań wystarczy.</p>
+                        </div>
+
+                        <div role="group" class="field">
+                            <altcha-widget
+                                name="altcha"
+                                type="checkbox"
+                                auto="onsubmit"
+                                language="pl"
+                                challenge="{&quot;algorithm&quot;:&quot;SHA-256&quot;,&quot;challenge&quot;:&quot;8a9f8b3dd8b441cafcff1e1af5470da54ca5760cd9ef60b50a64241c32aa8fa4&quot;,&quot;maxnumber&quot;:100000,&quot;salt&quot;:&quot;9e86dc079c12aea1e6c1c586?expires=1788616237&quot;,&quot;signature&quot;:&quot;2ca66ab86603e111070f32ffddf5172ea7a4fd3e27fd3137ad2b0efb5b534002&quot;}"
+                                configuration="{&quot;hideLogo&quot;:true,&quot;hideFooter&quot;:true}"
+                            ></altcha-widget>
+
+                            <noscript>
+                                <label for="f-captcha">Ile to jest pięć plus dwa?</label>
+                                <input id="f-captcha" name="captcha" type="text" inputmode="numeric"
+                                       maxlength="2" autocomplete="off" class="dana sm:max-w-32"
+                                       aria-describedby="f-captcha-opis">
+                                <p id="f-captcha-opis">
+                                    Wpisz wynik cyfrą. Zwykle liczy to za Ciebie przeglądarka,
+                                    ale masz wyłączony JavaScript.
+                                </p>
+                            </noscript>
+                        </div>
+
+                        <div role="group" class="field">
+                            <button type="submit" class="btn" data-size="lg">Wyślij zapytanie</button>
+                            <p>
+                                Dane służą wyłącznie do odpowiedzi na to zapytanie.
+                                Administratorem jest adw. Patryk Wróbel.
+                                Więcej: <a href="/obronakierowcy-podglad/kontakt/#s4">Dane osobowe</a>.
+                            </p>
+                        </div>
+
+                    </div>
+                </fieldset>
+            </div>
                 </section>
     </div>
 </section>
@@ -811,7 +896,7 @@
     </div>
 </div>
 
-<script nonce="7yga4f5PikkM2fzOCqPrfA==">
+<script nonce="PSqNuG+6zg7wTEZlSjRK8w==">
 /* Zgoda na cookie. Bez zależności, bez zewnętrznej biblioteki: całość mieści się
    w kilkudziesięciu linijkach, a każda biblioteka do zgód, którą warto by tu
    wstawić, i tak ładuje się z cudzego CDN-a, czyli z tego samego problemu,
