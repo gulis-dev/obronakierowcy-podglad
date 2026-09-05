@@ -1,0 +1,3 @@
+# Podgląd serwisu. Nie indeksować.
+User-agent: *
+Disallow: /

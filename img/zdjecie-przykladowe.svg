@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Zdjęcie przykładowe">
+  <rect width="1600" height="900" fill="#001d3d"/>
+  <rect x="0" y="0" width="1600" height="12" fill="#ffc300"/>
+  <g fill="none" stroke="#003566" stroke-width="2">
+    <path d="M0 300h1600M0 600h1600M400 0v900M800 0v900M1200 0v900"/>
+  </g>
+  <circle cx="800" cy="450" r="150" fill="none" stroke="#003566" stroke-width="6"/>
+  <text x="800" y="430" fill="#ffd60a" font-family="Inter, sans-serif" font-size="64" font-weight="700" text-anchor="middle">1600 &#215; 900</text>
+  <text x="800" y="500" fill="#5a7290" font-family="Inter, sans-serif" font-size="34" text-anchor="middle">zdjęcie przykładowe</text>
+</svg>
