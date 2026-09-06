@@ -18,4 +18,4 @@ Każda podstrona ma `noindex, nofollow`, a `robots.txt` zabrania wszystkiego.
 Powód: zaindeksowany podgląd pod adresem `github.io` konkurowałby z docelową
 domeną o te same frazy.
 
-Zrzut z dnia: 2026-09-05.
+Zrzut z dnia: 2026-09-06.
